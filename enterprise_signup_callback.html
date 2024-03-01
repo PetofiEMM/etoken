@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    window.onload = function () {
+      var url = new URL(window.location.href);
+      var enterpriseToken = url.searchParams.get("enterpriseToken");
+      var input = document.getElementById("enterpriseToken");
+      input.value = enterpriseToken;
+      input.select();
+    };
+  </script>
+</head>
+<body>
+  Please copy this code, and paste it in the PetofiEMM app:
+  <!-- <p><span id="enterpriseToken"></span> -->
+  <p><input id="enterpriseToken" readonly="readonly" style="width: 600px;">
+</body>
+</html>
