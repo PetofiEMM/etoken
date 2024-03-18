@@ -26,7 +26,7 @@
   function setupManagedConfigurations() {
 	var url = new URL(window.location.href);
 	var token = url.searchParams.get("token");
-	var pkg = url.searchParams.get("package");
+	var packageName = url.searchParams.get("packageName");
 	var mcmId = url.searchParams.get("mcmId");
 	var canDelete = url.searchParams.get("canDelete");
 	var locale = url.searchParams.get("locale");
@@ -39,8 +39,8 @@
 	var url = 'https://play.google.com/managed/mcm?token=' + token;
 	console.log("url built:", url);
 	
-	if (pkg) {
-      url += '&package=' + pkg;
+	if (packageName) {
+      url += '&packageName=' + packageName;
     }
 	if (mcmId) {
       url += '&mcmId=' + mcmId;
