@@ -31,7 +31,7 @@
   }
 
   function setupManagedConfigurations() {
-	var url = new URL(window.location.search);
+	var url = new URL(window.location.href);
     var token = url.searchParams.get("token");
 	var pkg = url.searchParams.get("package");
 	var mcmId = url.searchParams.get("mcmId");
