@@ -11,7 +11,7 @@
     // Copy "mcmId" to clipboard (if feasible)
     navigator.clipboard.writeText(event.mcmId).then(function() {
       // Display popup informing the user that the configuration has been saved, assigned the ID "mcmId", and copied to clipboard
-      alert("Configuration ID: " + event.mcmId + " has been saved and copied to clipboard.");
+      alert("Configuration" + event.name + "has been saved.\nConfiguration ID: " + event.mcmId + " has been copied to the clipboard.");
     }, function(err) {
       console.error("Could not copy text: ", err);
     });
@@ -21,18 +21,11 @@
     console.log("Config Deleted:", event);
     // Display popup informing the user that configuration identified by "mcmId" has been deleted
     alert("The configuration identified by mcmId: " + event.mcmId + " has been deleted.");
-    // Copy "mcmId" to clipboard (if feasible)
-    navigator.clipboard.writeText(event.mcmId).then(function() {
-      // Display popup informing the user that the configuration has been saved, assigned the ID "mcmId", and copied to clipboard
-      alert("Configuration ID: " + event.mcmId + " has been saved and copied to clipboard.");
-    }, function(err) {
-      console.error("Could not copy text: ", err);
-    });
   }
 
   function setupManagedConfigurations() {
 	var url = new URL(window.location.href);
-    var token = url.searchParams.get("token");
+	var token = url.searchParams.get("token");
 	var pkg = url.searchParams.get("package");
 	var mcmId = url.searchParams.get("mcmId");
 	var canDelete = url.searchParams.get("canDelete");
@@ -43,7 +36,7 @@
       return;
     }
 	
-	var url = 'https://play.google.com/managed/mcm?token=' + webToken;
+	var url = 'https://play.google.com/managed/mcm?token=' + token;
 	
 	if (pkg) {
       url += '&package=' + pkg;
