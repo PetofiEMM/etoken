@@ -37,7 +37,6 @@
     }
 	
 	var url = 'https://play.google.com/managed/mcm?token=' + token;
-	console.log("url built:", url);
 	
 	if (packageName) {
       url += '&packageName=' + packageName;
@@ -51,7 +50,7 @@
 	if (locale) {
       url += '&locale=' + locale;
     }
-
+	console.log("url built:", url);
 	
     gapi.load("gapi.iframes", function() {
       var options = {
