@@ -8,13 +8,23 @@
       var input = document.getElementById("enterpriseToken");
       input.value = enterpriseToken;
       input.select();
-	  navigator.clipboard.writeText(enterpriseToken);
+	  
+      // Delay clipboard write until a user interaction, like a button click
+      document.getElementById("copyButton").addEventListener("click", function() {
+        navigator.clipboard.writeText(enterpriseToken)
+          .then(function() {
+            alert("Text copied to clipboard successfully!");
+          })
+          .catch(function(error) {
+            console.error("Unable to copy text to clipboard:", error);
+          });
+      });
     };
   </script>
 </head>
 <body>
   Please copy this code, and paste it in the PetofiEMM app:
-  <!-- <p><span id="enterpriseToken"></span> -->
   <p><input id="enterpriseToken" readonly="readonly" style="width: 1200px;">
+  <button id="copyButton">Copy to Clipboard</button>
 </body>
 </html>
