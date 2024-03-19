@@ -13,7 +13,7 @@
       document.getElementById("copyButton").addEventListener("click", function() {
         navigator.clipboard.writeText(enterpriseToken)
           .then(function() {
-            alert("Text copied to clipboard successfully!");
+            <!-- alert("Text copied to clipboard successfully!"); -->
           })
           .catch(function(error) {
             console.error("Unable to copy text to clipboard:", error);
@@ -25,6 +25,8 @@
 <body>
   Please copy this code, and paste it in the PetofiEMM app:
   <p><input id="enterpriseToken" readonly="readonly" style="width: 1200px;">
+  <br>
+  <br>
   <button id="copyButton">Copy to Clipboard</button>
 </body>
 </html>
